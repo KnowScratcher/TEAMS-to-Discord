@@ -1,5 +1,5 @@
 # TEAMS-to-Discord
-## 專門為翰林雲端學院設計的傳送題目到Discord的Tempermonkey「腳本」
+## 專門為翰林雲端學院設計的傳送題目到Discord的Tampermonkey「腳本」
 ## 效果
 ![image](https://github.com/KnowScratcher/TEAMS-to-Discord/assets/103301742/b0e32fff-61c5-473a-80b0-94aee77cf6f0)
 ## 安裝
