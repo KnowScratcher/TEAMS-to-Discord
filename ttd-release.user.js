@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Test To Discord
 // @namespace    http://tampermonkey.net/
-// @version      v1.0.0
-// @description  專門為翰林雲端學院設計的傳送題目到Discord的Tempermonkey「腳本」
+// @version      v1.0.1
+// @description  專門為翰林雲端學院設計的傳送題目到Discord的Tampermonkey「腳本」
 // @author       Know Scratcher
 // @match        https://*.teamslite.com.tw/student/selfassReport.html*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=teamslite.com.tw
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    let webhook = "";
+    let webhook = [];
 
     let choice_prefix = ["A) ","B) ","C) ","D) ","E) ","F) ","G) ","H) ","I) "];
     let answers = ["A","B","C","D","E","F","G","H","I"];
@@ -230,17 +230,21 @@
             "Accept": "application/json",
         };
 
-        return fetch(webhook,{
-            method:"POST",
-            headers:header,
-            body:JSON.stringify(body)
-        }).then(body = {
+        for (let i=0;i<webhook.length;i++) {
+            await fetch(webhook[i],{
+                method:"POST",
+                headers:header,
+                body:JSON.stringify(body)
+            });
+        };
+        body = {
             "content": "",
             "tts": false,
             "embeds": [],
             "components": [],
             "actions": {}
-        });
+        };
+        return;
         
     }
     document.getElementsByClassName("col-md-10  margin-bottom-15")[0].innerHTML += "<button id='todc' class='btn green' type='button' onclick='start();'><font>傳送到Discord</font></button>"
