@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Test To Discord
 // @namespace    http://tampermonkey.net/
-// @version      v1.0.1
+// @version      v1.0.2
 // @description  專門為翰林雲端學院設計的傳送題目到Discord的Tampermonkey「腳本」
 // @author       Know Scratcher
 // @match        https://*.teamslite.com.tw/student/selfassReport.html*
